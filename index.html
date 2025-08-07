@@ -1,6 +1,31 @@
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-  const inputElements = document.querySelectorAll('input, textarea');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prevent Paste Example</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Pasting is Disabled</h2>
+  <p>Try to paste into the fields below:</p>
+  <input type="text" placeholder="Try pasting here">
+  <textarea rows="5" placeholder="Try pasting here too"></textarea>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const inputElements = document.querySelectorAll('input, textarea');
+
       inputElements.forEach(function (element) {
         element.addEventListener('paste', function (event) {
           event.preventDefault();
@@ -8,4 +33,6 @@
         });
       });
     });
-</script>
+  </script>
+</body>
+</html>
